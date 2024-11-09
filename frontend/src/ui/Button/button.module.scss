@@ -1,0 +1,24 @@
+@mixin button-styles() {
+  cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.15px;
+}
+
+.primary {
+  @include button-styles();
+  background-color: #5A54F2;
+  color: #ffffff;
+  border: none
+}
+
+.border {
+  @include button-styles();
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #C0C0C0;
+}
