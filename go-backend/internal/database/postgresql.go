@@ -35,12 +35,20 @@ func ConnectDatabase() {
 	}
 
 	createTablesQuery := `
-	CREATE TABLE IF NOT EXISTS cows_users (
-		id SERIAL PRIMARY KEY,  -- Идентификатор пользователя
-		name VARCHAR(255) NOT NULL,  -- Имя пользователя
-		email VARCHAR(255) NOT NULL, -- Email пользователя
-		password VARCHAR(255) NOT NULL	-- Пароль пользователя
-	);
+CREATE TABLE IF NOT EXISTS cows_users (
+    id SERIAL PRIMARY KEY,               -- Идентификатор пользователя
+    name VARCHAR(255) NOT NULL,          -- Имя пользователя
+    email VARCHAR(255) NOT NULL,         -- Email пользователя
+    password VARCHAR(255) NOT NULL,      -- Пароль пользователя
+    photo VARCHAR(255),                  -- Фото пользователя (URL или путь к фото)
+    stats_matches INT DEFAULT 0,         -- Количество матчей
+    stats_views INT DEFAULT 0,           -- Количество просмотров
+    animals TEXT[],                      -- Список животных
+    rating FLOAT DEFAULT 0,              -- Рейтинг пользователя
+    reviews_count INT DEFAULT 0,         -- Количество отзывов
+    reviews TEXT[]                       -- Список отзывов
+);
+
 	`
 
 	_, err = Db.Exec(createTablesQuery)

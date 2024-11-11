@@ -47,6 +47,72 @@
                 }
             }
         },
+        "/v1/user/me": {
+            "get": {
+                "description": "Возвращает все данные о пользователе по идентификатору или email из cookie.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "Получить данные пользователя",
+                "responses": {
+                    "200": {
+                        "description": "Данные пользователя успешно получены",
+                        "schema": {
+                            "$ref": "#/definitions/model.UserResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Ошибка при получении данных пользователя",
+                        "schema": {
+                            "$ref": "#/definitions/model.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/user/{id}": {
+            "get": {
+                "description": "Возвращает все данные о пользователе по идентификатору или email из cookie.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "Получить данные пользователя",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "ID пользователя, если доступ по ID",
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Данные пользователя успешно получены",
+                        "schema": {
+                            "$ref": "#/definitions/model.UserResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Ошибка при получении данных пользователя",
+                        "schema": {
+                            "$ref": "#/definitions/model.ErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
         "/v1/user_create": {
             "post": {
                 "description": "Создает нового пользователя с предоставленным email, паролем и именем.",
@@ -139,6 +205,47 @@
                 },
                 "password": {
                     "type": "string"
+                }
+            }
+        },
+        "model.UserResponse": {
+            "type": "object",
+            "properties": {
+                "animals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "photo": {
+                    "type": "string"
+                },
+                "rating": {
+                    "type": "number"
+                },
+                "reviews": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "reviews_count": {
+                    "type": "integer"
+                },
+                "stats_matches": {
+                    "type": "integer"
+                },
+                "stats_views": {
+                    "type": "integer"
                 }
             }
         }
