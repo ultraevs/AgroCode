@@ -5,6 +5,8 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import logo from '../../../../public/images/logo.png';
 import { Button } from '@/ui';
+import Link from 'next/link';
+import { routes } from '@/consts/routes';
 
 export default function Welcome() {
   return (
@@ -17,7 +19,10 @@ export default function Welcome() {
       </div>
       <div className={styles.wrapper__btns}>
         <Button buttonType="primary">Войти</Button>
-        <Button buttonType="border">Регистрация</Button>
+
+        <Link href={routes.auth.signup}>
+          <Button buttonType="border">Регистрация</Button>
+        </Link>
       </div>
     </div>
   );

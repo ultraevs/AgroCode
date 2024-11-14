@@ -1,0 +1,111 @@
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #B5E5FF 0%, #FFF 32.87%);
+
+    h2 {
+        opacity: 0.8;
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        padding: 300px 0 72px 0;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 48px;
+
+        &__fields {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            input {
+                width: 331px;
+                height: 56px;
+
+                border-radius: 8px;
+                border: 1px solid var(--Border, #E8ECF4);
+                background: #F7F8F9;
+                padding: 22px 18px 19px 18px;
+                outline: none;
+
+                color: var(--Gray, #8391A1);
+                font-family: "Inter", sans-serif;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            display: flex;
+            width: 331px;
+            height: 56px;
+            padding-left: 1px;
+            justify-content: center;
+            align-items: center;
+            border: none;
+
+            border-radius: 56px;
+            background: #5A54F2;
+
+
+            color: #FFF;
+            text-align: center;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+
+    a {
+        color: #000;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    &__link {
+        color: #5A54F2;
+    }
+
+    &__eye {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        position: absolute;
+        left: 324px;
+        bottom: 282px;
+
+        svg {
+            width: 22px;
+            height: 22px;
+            color: #6A707C;
+        }
+    }
+}
