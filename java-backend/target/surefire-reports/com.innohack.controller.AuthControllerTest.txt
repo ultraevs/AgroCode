@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.innohack.controller.AuthControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 1.27 s <<< FAILURE! - in com.innohack.controller.AuthControllerTest
+userCreate_ShouldReturnToken_WhenUserIsCreated  Time elapsed: 1.233 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(java.lang.CharSequence)" because "this.passwordEncoder" is null
+	at com.innohack.controller.AuthControllerTest.userCreate_ShouldReturnToken_WhenUserIsCreated(AuthControllerTest.java:42)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(java.lang.CharSequence)" because "this.passwordEncoder" is null
+	at com.innohack.controller.AuthControllerTest.userCreate_ShouldReturnToken_WhenUserIsCreated(AuthControllerTest.java:42)
+
+login_ShouldReturnToken_WhenCredentialsAreValid  Time elapsed: 0.019 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "connection" is null
+	at com.innohack.controller.AuthControllerTest.login_ShouldReturnToken_WhenCredentialsAreValid(AuthControllerTest.java:55)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "connection" is null
+	at com.innohack.controller.AuthControllerTest.login_ShouldReturnToken_WhenCredentialsAreValid(AuthControllerTest.java:55)
+
