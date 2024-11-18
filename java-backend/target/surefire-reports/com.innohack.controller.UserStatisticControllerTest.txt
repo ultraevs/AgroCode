@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.innohack.controller.UserStatisticControllerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.047 s <<< FAILURE! - in com.innohack.controller.UserStatisticControllerTest
+getUserInfo_ShouldReturnUserInfo_WhenUserExists  Time elapsed: 0.028 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.innohack.controller.UserStatisticControllerTest.getUserInfo_ShouldReturnUserInfo_WhenUserExists(UserStatisticControllerTest.java:49)
+
+getUserStats_ShouldReturnStats_WhenUserExists  Time elapsed: 0.018 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.innohack.controller.UserStatisticControllerTest.getUserStats_ShouldReturnStats_WhenUserExists(UserStatisticControllerTest.java:40)
+
